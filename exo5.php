@@ -1,51 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+
 <?php
-/**
-*ecrire un script génère un jour un mois et une année puis vérifie si la dette générée est valide
+//ecrire un script   qui initialise un tableau de couleurs puis génère une table html dont le nombre de lignes est égal au nombre de couleurs.
+//une ligne contient 2 cololones et a la meme couleur que celle définit dans le tableau
 
-*/
-define("MAX",2100);
-define("MIN",0);
-define("MAXMOIS",12);
-define("MINMOIS",1);
-define("MINJ",1);
-define("MAXJ",31);
 
-$annee=rand(MIN,MAX);
-$mois=rand(MINMOIS,MAXMOIS);
-$jours=rand(MINJ,MAXJ);
+$tcoul=array("jaune","vert","rouge","bleu","violet");
 
-if ($mois==4 or $mois==6 or $mois==9 or $mois==11){
-    $jours=30;
-    if($jours>30){
-        echo("la date n'est pas valide");
-    }
+
+    echo(" <table border=1>
+    <tr background-color=char($tcoul[0])>
+        <td>$tcoul[0]</td>
+        <td width=40></td>
+    </tr>
+    <tr>
+        <td>$tcoul[1]</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$tcoul[2]</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$tcoul[3]</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>$tcoul[4]</td>
+        <td></td>
+    </tr>
+    </table>");
     
-}
-if ($annee % 100 == 1 or $annee%4 == 0){
-    if ($mois==2){
-        $jours=29;
-        if($jours>29){
-            echo("la date n'est pas valide");
-        }
-        
-    }
-    elseif($mois==2){
-        $jours=28;
-        if($jours>28){
-            echo("la date n'est pas valide");
-        }
-    }
 
-
-}
-if($mois>12){
-    echo("la datte n'est pas valide");
-}
-
-echo("la date est:$jours");
-echo("/");
-echo("$mois");
-echo("/");
-echo("$annee");
 
 ?>
+</body>
+</html>
